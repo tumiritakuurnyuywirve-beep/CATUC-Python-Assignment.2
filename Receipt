@@ -1,0 +1,19 @@
+# A PROGRAM TO CALCULATE THE PURCHASE  MADE BY A CUSTOMER
+print("welcom to CATUC POS")
+num_items=int(input("Enter number of items;"))
+names=[]
+quantities=[]
+unit_prices=[]
+items_cost=[]
+for items in range(1, num_items +1):    print(f"\nitems {items}")  
+name=input("Enter name of items:")    quantity=int(input(" Enter quantity:"))    unit_price=float(input("Enter unit price:"))   amount=quantity*unit_price    names.append(name)    quantities.append(quantity)    unit_prices.append(unit_price)    items_cost.append(amount)    items_cost_total=sum(items_cost)
+if  items_cost_total>10000:    discount=0.30*items_cost_total
+elif(len(names) >5)and(items_cost_total>4000): discount = 0.15*items_cost_total
+elif items_cost_total>5000:   
+discount =0.10*items_cost_total
+else:  
+discount=0    
+total_cost=items_cost_total-discount
+print("\n---CATUC POS RECEIPT ---")
+for i in range(len(names)):     
+print(f"{names[i]} - {quantities[i]}*{unit_prices[i]}={items_cost[i]}")        print(f"Discount: {discount}")        print(f"Total to pay: {total_cost}")        print(f"Thank you for shopping with CATUC pos")
